@@ -1,21 +1,21 @@
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import L from "leaflet";
 import "./App.css";
-import LeafletGeocoder from "./LeafletGeocoder";
 import LeafletRoutingMachine from "./LeafletRoutingMachine";
+import LeafletGeocoder from "./LeafletGeocoder";
 
 function App() {
-  const position = [36.8065, 10.1815];
+  const position = [55.751244, 37.618423];
   return (
     <div className="App">
-      <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+      <MapContainer center={position} zoom={15} scrollWheelZoom>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/*  <LeafletGeocoder /> */}
+         <LeafletGeocoder />
         <LeafletRoutingMachine />
       </MapContainer>
     </div>
