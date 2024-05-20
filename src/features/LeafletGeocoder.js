@@ -1,10 +1,9 @@
-import { useEffect } from "react";
 import L from "leaflet";
 import { useMap } from "react-leaflet";
 
 const LeafletGeocoder = () => {
   const map = useMap();
-  useEffect(() => {
+  
     L.Control.geocoder({
       defaultMarkGeocode: false,
     })
@@ -14,7 +13,6 @@ const LeafletGeocoder = () => {
         map.fitBounds(e.geocode.bbox);
       })
       .addTo(map);
-  }, []);
   return null;
 };
 

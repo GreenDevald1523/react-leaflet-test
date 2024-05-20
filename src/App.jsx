@@ -1,10 +1,12 @@
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import L from "leaflet";
 import "./App.css";
-import LeafletRoutingMachine from "./LeafletRoutingMachine";
-import LeafletGeocoder from "./LeafletGeocoder";
+import LeafletRoutingMachine from "./features/LeafletRoutingMachine";
+import LeafletGeocoder from "./features/LeafletGeocoder";
+import React from "react";
+import { PickTransport } from "./features/PickTransport";
 
 function App() {
   const position = [55.751244, 37.618423];
@@ -15,8 +17,14 @@ function App() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-         <LeafletGeocoder />
+        <Marker position={position}>
+          <Popup>
+            Стартовая точка
+          </Popup>
+        </Marker>
+        <LeafletGeocoder />
         <LeafletRoutingMachine />
+        {/* <PickTransport /> */}
       </MapContainer>
     </div>
   );
