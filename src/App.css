@@ -1,6 +1,13 @@
 @import url("~leaflet/dist/leaflet.css");
+
 body, h2, h3 {
   margin: 0;
+  overflow: hidden;
+}
+
+input {
+  border-radius: 8px;
+  padding: 5px;
 }
 
 .leaflet-container {
@@ -30,7 +37,7 @@ body, h2, h3 {
 }
 
 .leaflet-routing-geocoders {
-  height: 85px;
+  height: 80px;
 }
 
 .leaflet-routing-geocoder {
@@ -40,14 +47,24 @@ body, h2, h3 {
 
 .leaflet-routing-container {
   overflow-y: hidden !important;
-  padding: 20px;
+  padding: 10px;
 }
 
 .leaflet-bar {
   border-radius: 20px;
-  max-height: 30vh;
+  max-height: 44vh;
 }
 
 .leaflet-routing-alt {
-  max-height: 140px !important;
+  max-height: 200px !important;
+}
+
+.leaflet-control-geocoder-icon {
+  border-radius: 8px;
+}
+
+.leaflet-routing-geocoders {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

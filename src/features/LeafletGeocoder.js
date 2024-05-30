@@ -1,19 +1,19 @@
-import L from "leaflet";
-import { useMap } from "react-leaflet";
+import L from "leaflet"
+import { useMap } from "react-leaflet"
 
 const LeafletGeocoder = () => {
-  const map = useMap();
-  
-    L.Control.geocoder({
-      defaultMarkGeocode: false,
-    })
-      .on("markgeocode", function (e) {
-        var latlng = e.geocode.center;
-        L.marker(latlng).addTo(map).bindPopup(e.geocode.name).openPopup();
-        map.fitBounds(e.geocode.bbox);
-      })
-      .addTo(map);
-  return null;
-};
+  const map = useMap()
 
-export default LeafletGeocoder;
+  L.Control.geocoder({
+    defaultMarkGeocode: false,
+  })
+    .on("markgeocode", function (e) {
+      const latlng = e.geocode.center
+      L.marker(latlng).addTo(map).bindPopup(e.geocode.name).openPopup()
+      map.fitBounds(e.geocode.bbox)
+    })
+    .addTo(map)
+  return null
+}
+
+export default LeafletGeocoder
