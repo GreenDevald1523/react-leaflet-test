@@ -1,9 +1,11 @@
 import L from "leaflet"
 import { useMap } from "react-leaflet"
 
-const LeafletGeocoder = () => {
+export const LeafletGeocoder = () => {
+  // Создание экземпляра карты
   const map = useMap()
 
+  // Создание кнопки с функционалом поиска адреса
   L.Control.geocoder({
     defaultMarkGeocode: false,
   })
@@ -15,5 +17,3 @@ const LeafletGeocoder = () => {
     .addTo(map)
   return null
 }
-
-export default LeafletGeocoder

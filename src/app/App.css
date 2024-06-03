@@ -38,6 +38,7 @@ input {
 
 .leaflet-routing-geocoders {
   height: 80px;
+  overflow-x: hidden;
 }
 
 .leaflet-routing-geocoder {
@@ -52,11 +53,11 @@ input {
 
 .leaflet-bar {
   border-radius: 20px;
-  max-height: 44vh;
+  max-height: 22vh;
 }
 
 .leaflet-routing-alt {
-  max-height: 200px !important;
+  max-height: 50px !important;
 }
 
 .leaflet-control-geocoder-icon {
@@ -65,6 +66,17 @@ input {
 
 .leaflet-routing-geocoders {
   display: flex;
+  overflow-y: hidden !important;
   flex-direction: column;
   gap: 10px;
+  padding: 3px !important;
+}
+
+.leaflet-routing-geocoders input {
+  max-width: 96%;
+}
+
+.leaflet-routing-alternatives-container {
+  height: 9vh;
+  overflow: hidden;
 }
